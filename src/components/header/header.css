@@ -1,6 +1,7 @@
 header {
   background: var(--qwik-purple);
 }
+
 header {
   display: flex;
   background: white;
@@ -26,12 +27,12 @@ header li {
   padding: 0;
 }
 
-header li a {
+header li>* {
   display: inline-block;
   padding: 15px 10px;
   text-decoration: none;
 }
 
-header li a:hover {
+header li>*:hover {
   text-decoration: underline;
 }
