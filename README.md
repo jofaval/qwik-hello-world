@@ -11,6 +11,20 @@
 
 ---
 
+## Why am I doing this?
+
+It's just a simple journal to get my hands on how does Qwik handle:
+
+- Mutations
+- State management
+- Memoization
+- Routing
+- Typescript compatibility
+
+...And, obviously, to see for myself it's speed and advantages, because it does indeed look very promising.
+
+It's just an experimental project, for fun, to test new technology out.
+
 ## Project Structure
 
 Inside of you project, you'll see the following directories and files:
