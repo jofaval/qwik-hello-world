@@ -7,12 +7,13 @@ export default component$(() => {
     fibonacci: 1,
     previous: 0,
     current: 0,
+    succession: 0,
     backMessage: "",
   });
 
   return (
     <>
-      <h1>Fibonacci</h1>
+      <h1>Fibonacci ({state.succession})</h1>
 
       <div
         style={{
@@ -33,6 +34,7 @@ export default component$(() => {
         </button>
         <button
           onClick$={() => {
+            state.succession += 1;
             state.current = state.fibonacci;
             state.fibonacci = state.previous + state.current;
             state.previous = state.current;
