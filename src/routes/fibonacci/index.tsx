@@ -26,8 +26,35 @@ export default component$(() => {
       <div className="actions">
         <button
           onClick$={() => {
-            state.backMessage =
-              "Sometimes in life, there's no going back, this is one of those times...";
+            if (state.fibonacci <= 1) {
+              state.backMessage =
+                "Sometimes in life, there's no going back, this is one of those times...";
+              return;
+            }
+
+            state.backMessage = "";
+
+            console.log({
+              succession: state.succession,
+              fibonacci: state.fibonacci,
+              current: state.current,
+              previous: state.previous,
+            });
+
+            state.succession -= 1;
+            // state.fibonacci = state.fibonacci - state.previous;
+            // state.current = state.previous;
+            // state.previous = state.fibonacci - state.current;
+            state.current = state.fibonacci - state.previous;
+            state.fibonacci = state.fibonacci - state.current;
+            state.previous = state.fibonacci - state.current;
+
+            console.log({
+              succession: state.succession,
+              fibonacci: state.fibonacci,
+              current: state.current,
+              previous: state.previous,
+            });
           }}
         >
           Back
@@ -38,7 +65,15 @@ export default component$(() => {
             state.current = state.fibonacci;
             state.fibonacci = state.previous + state.current;
             state.previous = state.current;
+
             state.backMessage = "";
+
+            console.log({
+              succession: state.succession,
+              fibonacci: state.fibonacci,
+              current: state.current,
+              previous: state.previous,
+            });
           }}
         >
           Next
